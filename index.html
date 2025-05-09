@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculadora de índice de masa corporal (IMC)">
+  <meta name="keywords" content="IMC, índice de masa corporal, calculadora IMC">
+  <meta name="author" content="Carlos Ramos">
   <title>Calculadora IMC</title>
 </head>
 <body>
-  <div>
+  <header>
     <h1>Calculadora de Índice Masa Corporal</h1>
-  </div>
-  <div>
+  </header>
+  <section class="calculator">
     <form action="">
       <input type="reset" value="Reiniciar">
       <fieldset>
@@ -22,30 +25,30 @@
       </fieldset>
       <input type="submit" value="Calcular IMC">
     </form>
-    <div>
+    <section class="result">
       <p>Resultado</p>
-      <div>
+      <div class="result__imc">
         <p>IMC:</p>
         <p id="imc_result">_</p>
       </div>
-      <div>
+      <div class="result__category">
         <p>Categoría:</p>
         <p id="category_result">_</p>
       </div>
-    </div>
-  </div>
+    </section>
+  </section>
 
-  <div>
-    <div>
+  <section class="info">
+    <div class="info__header">
       <h2>¿Qué es el índice de masa corporal?</h2>
     </div>
-    <div>
+    <div class="info__description">
       <p>El índice de masa corporal (IMC) es la relación
         entre la masa corporal de una persona y su
         estatura.</p>
-      <h3>Cálculo del índice de masa corporal</h3>
-      <div>
-        <math>
+      <div class="info__description--formula">
+        <h3>Cálculo del índice de masa corporal</h3>
+        <math class="formula">
           <mrow>
             <msup>
               <mi>IMC</mi>
@@ -64,31 +67,35 @@
           </mrow>
         </math>
       </div>
-      <h3>Clasificación del IMC</h3>
-      <table>
-        <tr>
-          <td>bajo peso</td>
-          <td>IMC < 18.5</td>
-        </tr>
-        <tr>
-          <td>peso normal</td>
-          <td>18.5 ≤ IMC < 24.9</td>
-        </tr>
-        <tr>
-          <td>sobrepeso</td>
-          <td>25 ≤ IMC < 29.9</td>
-        </tr>
-        <tr>
-          <td>obesidad</td>
-          <td>IMC ≥ 30</td>
-        </tr>
-      </table>
-      <h3>Referencias:</h3>
-      <ul>
-        <li><a href="https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index">OMS </a></li>
-        <li><a href="https://www.healthychildren.org/Spanish/health-issues/conditions/obesity/Paginas/body-mass-index-formula.aspx">Body Mass Index formula</a></li>
-      </ul>
+      <div class="info__description--category">
+        <h3>Clasificación del IMC de acuerdo a la OMS.</h3>
+        <table>
+          <tr>
+            <td>bajo peso</td>
+            <td>IMC < 18.5</td>
+          </tr>
+          <tr>
+            <td>peso normal</td>
+            <td>18.5 ≤ IMC < 24.9</td>
+          </tr>
+          <tr>
+            <td>sobrepeso</td>
+            <td>25 ≤ IMC < 29.9</td>
+          </tr>
+          <tr>
+            <td>obesidad</td>
+            <td>IMC ≥ 30</td>
+          </tr>
+        </table>
+      </div>
+      <div class="info__description--references">
+        <h3>Referencias:</h3>
+        <ul>
+          <li><a href="https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index">OMS </a></li>
+          <li><a href="https://www.healthychildren.org/Spanish/health-issues/conditions/obesity/Paginas/body-mass-index-formula.aspx">Body Mass Index formula</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 </body>
 </html>
