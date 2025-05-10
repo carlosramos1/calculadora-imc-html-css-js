@@ -32,11 +32,18 @@
   padding: 0;
 }
 
+html {
+  background-color: var(--text-color);
+}
+
 body {
   font-family: 'League Spartan', sans-serif;
   background-color: #f4f4f4;
   color: var(--text-color);
   font-size: 16px;
+
+  max-width: 405px;
+  margin: 0 auto;
 }
 
 h1 {
