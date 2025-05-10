@@ -219,11 +219,22 @@ a {
 .info__header {
   background-color: var(--border-color);
   padding: 12px;
+
+  position: relative;
 }
 
 .info__header h2 {
   font-size: 1rem;
   font-weight: normal;
+}
+
+.info__header .button-open-close {
+  display: inline-block;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 1px solid var(--primary-color-tinte-01);
 }
 
 .info__description {
@@ -275,7 +286,7 @@ a {
 }
 
 footer {
-  background-color: var(--primary-color-darker);
+  background-color: var(--primary-color-dark);
   padding: 12px;
 }
 
