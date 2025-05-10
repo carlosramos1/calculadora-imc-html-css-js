@@ -7,99 +7,103 @@
   <meta name="keywords" content="IMC, índice de masa corporal, calculadora IMC">
   <meta name="author" content="Carlos Ramos">
   <title>Calculadora IMC</title>
+
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Calculadora de Índice Masa Corporal</h1>
+  <header class="header">
+    <h1>Calculadora de <br>Índice Masa Corporal</h1>
   </header>
-  <section class="calculator">
-    <form action="">
-      <input type="reset" value="Reiniciar">
-      <fieldset>
-        <label for="height">Altura <small>(en metros)</small></label>
-        <input type="text" name="height_m" id="height" placeholder="Ej. 1.75" required>
-      </fieldset>
-      <fieldset>
-        <label for="weight">Peso <small>(en kilogramos)</small></label>
-        <input type="text" name="weight_kg" id="weight" placeholder="Ej. 70" required>
-      </fieldset>
-      <input type="submit" value="Calcular IMC">
-    </form>
-    <section class="result">
-      <p>Resultado</p>
-      <div class="result__imc">
-        <p>IMC:</p>
-        <p id="imc_result">_</p>
-      </div>
-      <div class="result__category">
-        <p>Categoría:</p>
-        <p id="category_result">_</p>
-      </div>
+  <div class="container">
+    <section class="calculator">
+      <form action="">
+        <input type="reset" value="Reiniciar">
+        <fieldset>
+          <label for="height">Altura <small>(en metros)</small></label>
+          <input type="text" name="height_m" id="height" placeholder="Ej. 1.75" required>
+        </fieldset>
+        <fieldset>
+          <label for="weight">Peso <small>(en kilogramos)</small></label>
+          <input type="text" name="weight_kg" id="weight" placeholder="Ej. 70" required>
+        </fieldset>
+        <input type="submit" value="Calcular IMC">
+      </form>
+      <section class="result-box">
+        <p class="result__title">Resultado</p>
+        <div class="result__imc">
+          <p>IMC:</p>
+          <h2 id="imc_result">36</h2>
+        </div>
+        <div class="result__category">
+          <p>Categoría:</p>
+          <h2 id="category_result">Obesidad</h2>
+        </div>
+      </section>
     </section>
-  </section>
-
-  <section class="info">
-    <div class="info__header">
-      <h2>¿Qué es el índice de masa corporal?</h2>
-    </div>
-    <div class="info__description">
-      <p>El índice de masa corporal (IMC) es la relación
-        entre la masa corporal de una persona y su
-        estatura.</p>
-      <div class="info__description--formula">
-        <h3>Cálculo del índice de masa corporal</h3>
-        <math class="formula">
-          <mrow>
-            <msup>
-              <mi>IMC</mi>
-            </msup>
-            <mo>=</mo>
+  
+    <section class="info-box">
+      <div class="info__header">
+        <h2>¿Qué es el índice de masa corporal?</h2>
+      </div>
+      <div class="info__description">
+        <p>El índice de masa corporal (IMC) es la relación
+          entre la masa corporal de una persona y su
+          estatura.</p>
+        <div class="info__description--formula">
+          <h3>Cálculo del índice de masa corporal</h3>
+          <math class="formula">
             <mrow>
               <msup>
-                <mi>peso (kg)</mi>
+                <mi>IMC</mi>
               </msup>
-              <mo>/</mo>
-              <msup>
-                <mi>atura (m)</mi>
-                <mn>2</mn>
-              </msup>
+              <mo>=</mo>
+              <mrow>
+                <msup>
+                  <mi>peso (kg)</mi>
+                </msup>
+                <mo>/</mo>
+                <msup>
+                  <mi>atura (m)</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
             </mrow>
-          </mrow>
-        </math>
+          </math>
+        </div>
+        <div class="info__description--category">
+          <h3>Clasificación del IMC de acuerdo a la OMS.</h3>
+          <table>
+            <tr>
+              <td>bajo peso</td>
+              <td>IMC < 18.5</td>
+            </tr>
+            <tr>
+              <td>peso normal</td>
+              <td>18.5 ≤ IMC < 24.9</td>
+            </tr>
+            <tr>
+              <td>sobrepeso</td>
+              <td>25 ≤ IMC < 29.9</td>
+            </tr>
+            <tr>
+              <td>obesidad</td>
+              <td>IMC ≥ 30</td>
+            </tr>
+          </table>
+        </div>
+        <div class="info__description--references">
+          <h3>Referencias:</h3>
+          <ul class="references-list">
+            <li><a href="https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index" target="_blank">OMS </a></li>
+            <li><a href="https://www.healthychildren.org/Spanish/health-issues/conditions/obesity/Paginas/body-mass-index-formula.aspx" target="_blank">Body Mass Index formula</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="info__description--category">
-        <h3>Clasificación del IMC de acuerdo a la OMS.</h3>
-        <table>
-          <tr>
-            <td>bajo peso</td>
-            <td>IMC < 18.5</td>
-          </tr>
-          <tr>
-            <td>peso normal</td>
-            <td>18.5 ≤ IMC < 24.9</td>
-          </tr>
-          <tr>
-            <td>sobrepeso</td>
-            <td>25 ≤ IMC < 29.9</td>
-          </tr>
-          <tr>
-            <td>obesidad</td>
-            <td>IMC ≥ 30</td>
-          </tr>
-        </table>
-      </div>
-      <div class="info__description--references">
-        <h3>Referencias:</h3>
-        <ul>
-          <li><a href="https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index">OMS </a></li>
-          <li><a href="https://www.healthychildren.org/Spanish/health-issues/conditions/obesity/Paginas/body-mass-index-formula.aspx">Body Mass Index formula</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Dev. Carlos Ramos <a href="https://www.linkedin.com/in/carlosramos05/" target="_blank">Linkedin</a> | <a href="https://github.com/carlosramos1" target="_blank">GitHub</a> | <a href="https://gitlab.com/carlosramos14">GitLab</a></p>
+    <p>&copy; 2025 Dev. Carlos Ramos <a href="https://www.linkedin.com/in/carlosramos05/" target="_blank">Linkedin</a> | <a href="https://github.com/carlosramos1" target="_blank">GitHub</a> | <a href="https://gitlab.com/carlosramos14" target="_blank">GitLab</a></p>
   </footer>
 </body>
 </html>
