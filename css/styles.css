@@ -3,17 +3,27 @@
   src: url("font/LeagueSpartan-VariableFont_wght.ttf");
 }
 
+/* Color guide https://www.colorhexa.com/04007d*/
 :root {
   --primary-color: #04007d;
   --secondary-color: #007d04;
+  
   --primary-color-dark: #02004a;
   --primary-color-darker: #020031;
   --primary-color-light: #0600b0;
   --primary-color-lighter: #0600ca;
-  --text-color: #2C2C2C;
-  --border-color: #969696;
-  --border-color-light: #d9d9d9;
-  --primary-color-opacity-02: rgba(4, 0, 125, 0.2);
+
+  --text-color: #404040;
+
+  --border-color: #d4d4d4;
+
+  --primary-color-tinte-01: #e0dfff;
+  --primary-color-tinte-02: #cdcbff;
+  --primary-color-tinte-03: #817dff;
+
+  --color-info-danger: #cc0000;
+  --color-info-success: #138808;
+  --color-info-warning: #ffa700;
 }
 
 * {
@@ -30,7 +40,7 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 h2 {
@@ -45,8 +55,19 @@ p {
   font-size: 1rem;
 }
 
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 .header {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background: linear-gradient(
+    to right, 
+    var(--primary-color-dark)3%,
+    var(--primary-color) 20%, 
+    var(--secondary-color)
+    );
   color: white;
   padding: 16px;
   text-align: center;
@@ -132,10 +153,12 @@ p {
 }
 
 .calculator .result-box {
-  background-color: var(--primary-color-opacity-02);
-  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color-tinte-01);
+  border: 1px solid var(--primary-color-tinte-02);
   text-align: center;
   padding: 0.8rem;
+
+  position: relative;
 }
 
 .calculator .result__title {
@@ -162,10 +185,11 @@ p {
 .info-box {
   margin: 10px 0;
   border: 1px solid var(--border-color);
+  background-color: white;
 }
 
 .info__header {
-  background-color: var(--border-color-light);
+  background-color: var(--border-color);
   padding: 12px;
 }
 
@@ -215,12 +239,11 @@ p {
 }
 .references-list {
   padding-left: 24px;
+  color: var(--text-color)
 }
 
 .references-list li a {
-  color: var(--text-color);
   font-weight: 300;
-  text-decoration: underline;
 }
 
 footer {
@@ -238,5 +261,15 @@ footer a {
   color: var(--secondary-color)
 }
 footer a:hover, .references-list li a:hover {
-  text-decoration: none;
+  text-decoration: underline
+}
+
+.colorbar {
+  width: 100%;
+  height: 14px;
+  background-color: var(--color-info-danger);
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
