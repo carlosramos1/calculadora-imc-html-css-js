@@ -63,11 +63,11 @@
     let category = ""
     if (imc < 18.5) {
       category = "Bajo peso";
-    } else if (imc >= 18.5 && imc < 24.9) {
+    } else if (imc >= 18.5 && imc < 24.99) {
       category = "Peso normal";
-    } else if (imc >= 24.9 && imc < 29.9) {
+    } else if (imc >= 25 && imc < 29.99) {
       category = "Sobrepeso";
-    } else{
+    } else {   //imc > 30
       category = "Obesidad";
     }
     return category;
@@ -129,6 +129,15 @@
       e.preventDefault();
       inputWeight.focus();
     }
+  })
+
+  var boxInfo = document.getElementsByClassName('info-box')[0];
+  var headerInfo = document.getElementsByClassName('info__header')[0];
+  var btnOpenClose = document.getElementsByClassName('button-open-close')[0];
+  headerInfo.addEventListener('click', function(e) {
+    boxInfo.classList.toggle('colapse-info-box');
+    btnOpenClose.classList.toggle('rotate-180deg');
+
   })
 
 })();
