@@ -140,6 +140,12 @@ a {
 .calculator form fieldset {
   margin: 0 0 14px;
   border: none;
+  position: relative;
+}
+
+.calculator form fieldset > small { /*for error msg*/
+  position: absolute;
+  bottom: -1px;
 }
 
 .calculator form label {
