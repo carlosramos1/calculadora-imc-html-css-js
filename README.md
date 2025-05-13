@@ -34,6 +34,7 @@ la Organización Mundial de la Salud
 recursos para evaluar el estado nutricional.
 
 **¿Cómo se calcula el IMC?**
+
 $$
 IMC = Peso (kg) / altura (m)^2
 $$
