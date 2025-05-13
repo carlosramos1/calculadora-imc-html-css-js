@@ -6,6 +6,7 @@
   var imcResult = document.getElementById("imcResult");
   var categoryResult = document.getElementById("categoryResult");
   var bar = document.getElementsByClassName('colorbar')[0];
+  var reset = document.getElementById('btnReset');
 
   formImc.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -23,7 +24,14 @@
     categoryResult.textContent = category;
 
     fillColorBar(category);
-  })
+  });
+
+  reset.addEventListener('click', function(e) {
+    imcResult.textContent = "_";
+    categoryResult.textContent = "_"
+    bar.style.background = "var(--border-color)";
+  });
+
 
   function calculateIMC(weight, height) {
     let h_2 = height * height;
