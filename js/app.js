@@ -2,11 +2,11 @@
 
   var weightInput = document.getElementById("weight");
   var heightInput = document.getElementById("height");
-  var imcForm = document.getElementById("imcForm");
+  var formImc = document.getElementById("imcForm");
   var imcResult = document.getElementById("imcResult");
   var categoryResult = document.getElementById("categoryResult");
 
-  imcForm.addEventListener('submit', function(event) {
+  formImc.addEventListener('submit', function(event) {
     event.preventDefault();
 
     let w = weightInput.value;
@@ -15,9 +15,11 @@
     w = parseFloat(w);
     h = parseFloat(h);
 
-    let result = calculateIMC(w, h);
-    
-    imcResult.textContent = result;
+    let imc = calculateIMC(w, h);
+    imcResult.textContent = imc;
+
+    let category = classifyIMC(imc);
+    categoryResult.textContent = category;
 
   })
 
@@ -25,6 +27,20 @@
     let h_2 = height * height;
     let result = weight / h_2;
     return roundDecimal(result, 2);
+  }
+
+  function classifyIMC(imc) {
+    let category = ""
+    if (imc < 18.5) {
+      category = "Bajo peso";
+    } else if (imc >= 18.5 && imc < 24.9) {
+      category = "Peso normal";
+    } else if (imc >= 24.9 && imc < 29.9) {
+      category = "Sobrepeso";
+    } else{
+      category = "Obesidad";
+    }
+    return category;
   }
 
 
