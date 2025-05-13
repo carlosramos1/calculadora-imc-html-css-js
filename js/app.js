@@ -104,7 +104,9 @@
   function existsErrors(value, maxValue) {
     let errorMessage = "";
     let re = /^\d{1,3}(\.\d{0,3})?$/; // is a valid number max 3 decimal
-    if(value.search(re) < 0) {
+    if(value == "") {
+      errorMessage = "Ingrese un valor numérico.";
+    }else if(value.search(re) < 0) {
       errorMessage = "Solo se permite números positivos.";
     } else if(value < 0 || value > maxValue) {
       errorMessage = `El valor ingresado debe ser entre 0 y ${maxValue}.`
