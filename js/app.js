@@ -115,8 +115,8 @@
   }
 
   function resetStyles() {
-    inputHeight.style.borderColor = "var(--border-color)"
-    inputWeight.style.borderColor = "var(--border-color)";
+    inputHeight.style.borderColor = ""
+    inputWeight.style.borderColor = "";
     errorMsgHeight.textContent = "";
     errorMsgWeight.textContent = "";
     imcResult.textContent = "_"; 
