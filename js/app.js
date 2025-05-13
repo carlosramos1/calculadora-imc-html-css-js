@@ -63,9 +63,9 @@
     let category = ""
     if (imc < 18.5) {
       category = "Bajo peso";
-    } else if (imc >= 18.5 && imc < 24.99) {
+    } else if (imc >= 18.5 && imc <= 24.99) {
       category = "Peso normal";
-    } else if (imc >= 25 && imc < 29.99) {
+    } else if (imc >= 25  && imc <= 29.99) {
       category = "Sobrepeso";
     } else {   //imc > 30
       category = "Obesidad";
