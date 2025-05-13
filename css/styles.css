@@ -63,7 +63,7 @@ p {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
@@ -159,7 +159,7 @@ a {
 }
 .calculator form input[type="text"]:focus {
   outline: none;
-  border: solid 1px var(--primary-color);
+  border: solid 1px var(--secondary-color);
 }
 .calculator form fieldset::after {
   content: attr(data-label);
@@ -184,7 +184,7 @@ a {
   font-size: 1rem;
 }
 .calculator form input[type="submit"]:hover {
-  background: var(--primary-color-dark);
+  background: var(--primary-color-light);
 }
 
 .calculator .result-box {
