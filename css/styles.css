@@ -313,7 +313,7 @@ footer a:hover, .references-list li a:hover {
 .colorbar {
   width: 100%;
   height: 14px;
-  background-color: var(--color-info-danger);
+  background-color: var(--border-color);
   margin: 0 auto;
   position: absolute;
   bottom: 0;

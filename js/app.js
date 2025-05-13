@@ -5,6 +5,7 @@
   var formImc = document.getElementById("imcForm");
   var imcResult = document.getElementById("imcResult");
   var categoryResult = document.getElementById("categoryResult");
+  var bar = document.getElementsByClassName('colorbar')[0];
 
   formImc.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -21,6 +22,7 @@
     let category = classifyIMC(imc);
     categoryResult.textContent = category;
 
+    fillColorBar(category);
   })
 
   function calculateIMC(weight, height) {
@@ -43,7 +45,6 @@
     return category;
   }
 
-
   /**
    * 
    * @param {*} num 
@@ -55,5 +56,21 @@
     return Math.round(num * factor) / factor;
   }
 
+  function fillColorBar(category) {
+    switch(category) {
+      case "Bajo peso":
+        bar.style.background = "var(--color-info-danger)";
+        break;
+      case "Peso normal":
+        bar.style.background = "var(--color-info-success)";
+        break;
+      case "Sobrepeso":
+        bar.style.background = "var(--color-info-warning)";
+        break;
+      case "Obesidad":
+        bar.style.background = "var(--color-info-danger)";
+        break;
+    }
+  }
 
 })();
