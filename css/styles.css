@@ -21,9 +21,13 @@
   --primary-color-tinte-02: #cdcbff;
   --primary-color-tinte-03: #817dff;
 
-  --color-info-danger: #cc0000;
-  --color-info-success: #138808;
-  --color-info-warning: #ffa700;
+  --color-danger: #cc0000;
+  --color-success: #138808;
+  --color-warning: #ffa700;
+}
+
+.color-danger {
+  color: var(--color-danger);
 }
 
 * {

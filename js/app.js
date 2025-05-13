@@ -1,35 +1,55 @@
 (function () {
 
-  var weightInput = document.getElementById("weight");
   var heightInput = document.getElementById("height");
+  var weightInput = document.getElementById("weight");
   var formImc = document.getElementById("imcForm");
   var imcResult = document.getElementById("imcResult");
   var categoryResult = document.getElementById("categoryResult");
-  var bar = document.getElementsByClassName('colorbar')[0];
+  var colorBarCategory = document.getElementsByClassName('colorbar')[0];
   var reset = document.getElementById('btnReset');
+  var errorMsgHeight = document.getElementById('errorMsgHeight');
+  var errorMsgWeight = document.getElementById('errorMsgWeight');
 
   formImc.addEventListener('submit', function(event) {
+    resetStyles();
     event.preventDefault();
 
-    let w = weightInput.value;
     let h = heightInput.value;
+    let w = weightInput.value;
+    
+    /* Validations */
+    var errorHeight = existsErrors(h, 3); 
+    if(errorHeight){
+      heightInput.style.borderColor = "var(--color-danger)";
+      errorMsgHeight.textContent = errorHeight;
+    }
+    
+    var errorWeight = existsErrors(w, 500);
+    if(errorWeight) {
+      weightInput.style.borderColor = "var(--color-danger)";
+      errorMsgWeight.textContent = errorWeight;
+    }
 
-    w = parseFloat(w);
-    h = parseFloat(h);
-
-    let imc = calculateIMC(w, h);
-    imcResult.textContent = imc;
-
-    let category = classifyIMC(imc);
-    categoryResult.textContent = category;
-
-    fillColorBar(category);
+    if (!errorHeight && !errorWeight) {
+      w = parseFloat(w);
+      h = parseFloat(h);
+      
+      let imc = calculateIMC(w, h);
+      imcResult.textContent = imc;
+  
+      let category = classifyIMC(imc);
+      categoryResult.textContent = category;
+  
+      fillColorBar(category);
+    } 
+    
   });
 
   reset.addEventListener('click', function(e) {
+    resetStyles();
     imcResult.textContent = "_";
     categoryResult.textContent = "_"
-    bar.style.background = "var(--border-color)";
+    colorBarCategory.style.background = "var(--border-color)";
   });
 
 
@@ -67,18 +87,39 @@
   function fillColorBar(category) {
     switch(category) {
       case "Bajo peso":
-        bar.style.background = "var(--color-info-danger)";
+        colorBarCategory.style.background = "var(--color-danger)";
         break;
       case "Peso normal":
-        bar.style.background = "var(--color-info-success)";
+        colorBarCategory.style.background = "var(--color-success)";
         break;
       case "Sobrepeso":
-        bar.style.background = "var(--color-info-warning)";
+        colorBarCategory.style.background = "var(--color-warning)";
         break;
       case "Obesidad":
-        bar.style.background = "var(--color-info-danger)";
+        colorBarCategory.style.background = "var(--color-danger)";
         break;
     }
+  }
+
+  function existsErrors(value, maxValue) {
+    let errorMessage = "";
+    let re = /^\d{1,3}(\.\d{0,3})?$/; // is a valid number max 3 decimal
+    if(value.search(re) < 0) {
+      errorMessage = "Solo se permite números positivos.";
+    } else if(value < 0 || value > maxValue) {
+      errorMessage = `El valor ingresado debe ser entre 0 y ${maxValue}.`
+    }
+    return errorMessage;
+  }
+
+  function resetStyles() {
+    heightInput.style.borderColor = "var(--border-color)"
+    weightInput.style.borderColor = "var(--border-color)";
+    errorMsgHeight.textContent = "";
+    errorMsgWeight.textContent = "";
+    imcResult.textContent = "_"; 
+    categoryResult.textContent = "_";
+    colorBarCategory.style.background = "var(--border-color)";
   }
 
 })();
