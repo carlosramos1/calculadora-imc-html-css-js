@@ -2,7 +2,7 @@
 
 Es una aplicación que calcula el Indice de Masa Corporal segun la Organización Mundial de Salud.
 
-
+https://carlosramos1.github.io/calculadora-imc-html-css-js/
 
 > **Nota**: El resultado de esta calculadora es meramente informativo y no así un diagnostico absoluto.
 
