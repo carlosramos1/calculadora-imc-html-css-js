@@ -1,7 +1,7 @@
 (function () {
 
-  var heightInput = document.getElementById("height");
-  var weightInput = document.getElementById("weight");
+  var inputHeight = document.getElementById("height");
+  var inputWeight = document.getElementById("weight");
   var formImc = document.getElementById("imcForm");
   var imcResult = document.getElementById("imcResult");
   var categoryResult = document.getElementById("categoryResult");
@@ -14,19 +14,19 @@
     resetStyles();
     event.preventDefault();
 
-    let h = heightInput.value;
-    let w = weightInput.value;
+    let h = inputHeight.value;
+    let w = inputWeight.value;
     
     /* Validations */
     var errorHeight = existsErrors(h, 3); 
     if(errorHeight){
-      heightInput.style.borderColor = "var(--color-danger)";
+      inputHeight.style.borderColor = "var(--color-danger)";
       errorMsgHeight.textContent = errorHeight;
     }
     
     var errorWeight = existsErrors(w, 500);
     if(errorWeight) {
-      weightInput.style.borderColor = "var(--color-danger)";
+      inputWeight.style.borderColor = "var(--color-danger)";
       errorMsgWeight.textContent = errorWeight;
     }
 
@@ -115,13 +115,20 @@
   }
 
   function resetStyles() {
-    heightInput.style.borderColor = "var(--border-color)"
-    weightInput.style.borderColor = "var(--border-color)";
+    inputHeight.style.borderColor = "var(--border-color)"
+    inputWeight.style.borderColor = "var(--border-color)";
     errorMsgHeight.textContent = "";
     errorMsgWeight.textContent = "";
     imcResult.textContent = "_"; 
     categoryResult.textContent = "_";
     colorBarCategory.style.background = "var(--border-color)";
   }
+
+  inputHeight.addEventListener('keydown', function(e) {
+    if(e.key == "Enter") {
+      e.preventDefault();
+      inputWeight.focus();
+    }
+  })
 
 })();
